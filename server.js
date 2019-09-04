@@ -89,26 +89,17 @@ app.get("/api/contacts/:id", function (req, res) {
   });
 });
 
-
-Contact = require('./src/app/contacts/contact');
-
 app.put("/api/contacts/:id", function (req, res) {
-  Contact.findById(req.params.contact_id, function (err, contact) {
-    if (err)
-      res.send(err);
-    contact.name = req.body.name ? req.body.name : contact.name;
-    contact.gender = req.body.gender;
-    contact.email = req.body.email;
-    contact.phone = req.body.phone;
-    // save the contact and check for errors
-    contact.save(function (err) {
-      if (err)
-        res.json(err);
-      res.json({
-        message: 'Contact Info updated',
-        data: contact
-      });
-    });
+  var updateDoc = req.body;
+  delete updateDoc._id;
+
+  db.collection(CONTACTS_COLLECTION).updateOne({ _id: new ObjectID(req.params.id) }, updateDoc, function (err, doc) {
+    if (err) {
+      handleError(res, err.message, "Failed to update contact");
+    } else {
+      updateDoc._id = req.params.id;
+      res.status(200).json(updateDoc);
+    }
   });
 });
 
