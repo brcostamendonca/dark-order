@@ -6,7 +6,8 @@ var ObjectID = mongodb.ObjectID;
 var CONTACTS_COLLECTION = "contacts";
 
 var app = express();
-app.use(bodyParser.json());
+//app.use(bodyParser.json());
+app.use(bodyParser());
 
 // Create link to Angular build directory
 var distDir = __dirname + "/dist/";
