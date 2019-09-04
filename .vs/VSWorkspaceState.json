@@ -7,6 +7,6 @@
     "\\src\\app\\contacts\\contact-details",
     "\\src\\app\\contacts\\contact-list"
   ],
-  "SelectedNode": "\\package.json",
+  "SelectedNode": "\\src\\app\\app.component.ts",
   "PreviewInSolutionExplorer": false
 }
