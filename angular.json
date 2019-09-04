@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "mean-contactlist-angular2": {
+    "dark-order": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/mean-contactlist-angular2",
+            "outputPath": "dist/dark-order",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -63,18 +63,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "mean-contactlist-angular2:build"
+            "browserTarget": "dark-order:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "mean-contactlist-angular2:build:production"
+              "browserTarget": "dark-order:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "mean-contactlist-angular2:build"
+            "browserTarget": "dark-order:build"
           }
         },
         "test": {
@@ -111,15 +111,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "mean-contactlist-angular2:serve"
+            "devServerTarget": "dark-order:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "mean-contactlist-angular2:serve:production"
+              "devServerTarget": "dark-order:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "mean-contactlist-angular2"
+  "defaultProject": "dark-order"
 }

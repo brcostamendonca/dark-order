@@ -28,6 +28,7 @@ export class ContactDetailsComponent {
   }
 
   updateContact(contact: Contact): void {
+    console.log('1 -'); console.log(contact);
     this.contactService.updateContact(contact).then((updatedContact: Contact) => {
       this.updateHandler(updatedContact);
     });

@@ -10,7 +10,7 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('mean-contactlist-angular2 app is running!');
+    expect(page.getTitleText()).toEqual('dark-order app is running!');
   });
 
   afterEach(async () => {

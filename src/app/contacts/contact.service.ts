@@ -10,6 +10,7 @@ export class ContactService {
 
   // get("/api/contacts")
   getContacts(): Promise<void | Contact[]> {
+    console.log(this.http);
     return this.http.get(this.contactsUrl)
       .toPromise()
       .then(response => response.json() as Contact[])
@@ -36,6 +37,8 @@ export class ContactService {
 
   // put("/api/contacts/:id")
   updateContact(putContact: Contact): Promise<void | Contact> {
+    console.log('2 put -'); console.log(putContact);
+
     var putUrl = this.contactsUrl + '/' + putContact._id;
     return this.http.put(putUrl, putContact)
       .toPromise()
