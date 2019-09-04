@@ -103,6 +103,8 @@ app.put("/api/contacts/:id", function (req, res) {
   });
 });
 
+
+
 app.delete("/api/contacts/:id", function (req, res) {
   db.collection(CONTACTS_COLLECTION).deleteOne({ _id: new ObjectID(req.params.id) }, function (err, result) {
     if (err) {
