@@ -90,6 +90,7 @@ app.get("/api/contacts/:id", function (req, res) {
 });
 
 app.put("/api/contacts/:id", function (req, res) {
+  console.log('here put');
   var updateDoc = req.body;
   delete updateDoc._id;
 
