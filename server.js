@@ -6,8 +6,7 @@ var ObjectID = mongodb.ObjectID;
 var CONTACTS_COLLECTION = "contacts";
 
 var app = express();
-//app.use(bodyParser.json());
-app.use(bodyParser());
+app.use(bodyParser.json());
 
 // Create link to Angular build directory
 var distDir = __dirname + "/dist/";
@@ -91,7 +90,6 @@ app.get("/api/contacts/:id", function (req, res) {
 });
 
 app.put("/api/contacts/:id", function (req, res) {
-  console.log('here put');
   var updateDoc = req.body;
   delete updateDoc._id;
 
