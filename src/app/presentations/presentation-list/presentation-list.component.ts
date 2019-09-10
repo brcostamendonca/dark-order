@@ -45,9 +45,9 @@ export class PresentationListComponent implements OnInit {
     this.selectPresentation(presentation);
   }
 
-  private getIndexOfPresentation = (contactId: String) => {
-    return this.contacts.findIndex((contact) => {
-      return contact._id === contactId;
+  private getIndexOfPresentation = (presentationId: String) => {
+    return this.presentations.findIndex((presentation) => {
+      return presentation._id === presentationId;
     });
   }
 
