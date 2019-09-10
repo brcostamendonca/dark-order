@@ -40,7 +40,7 @@ export class PresentationListComponent implements OnInit {
   createNewPresentation() {
     var presentation: Presentation = {
       title: ''
-      }
+    };
 
     this.selectPresentation(presentation);
   }
