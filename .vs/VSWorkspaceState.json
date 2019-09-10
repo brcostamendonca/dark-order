@@ -7,6 +7,6 @@
     "\\src\\app\\contacts\\contact-details",
     "\\src\\app\\contacts\\contact-list"
   ],
-  "SelectedNode": "\\server.js",
+  "SelectedNode": "\\src\\app\\contacts\\contact.ts",
   "PreviewInSolutionExplorer": false
 }
