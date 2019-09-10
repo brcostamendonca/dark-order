@@ -1,0 +1,18 @@
+<div *ngIf="contact" class="row">
+  <div class="col-md-12">
+    <h2 *ngIf="contact._id">Presentation Details</h2>
+    <h2 *ngIf="!contact._id">New Presentation</h2>
+  </div>
+</div>
+<div *ngIf="contact" class="row">
+  <form class="col-md-12">
+    <div class="form-group">
+      <label for="contact-name">Title</label>
+      <input class="form-control" name="contact-name" [(ngModel)]="presentation.title" placeholder="Title" />
+    </div>
+
+    <button class="btn btn-primary" *ngIf="!presentation._id" (click)="createPresentation(presentation)">Create</button>
+    <button class="btn btn-info" *ngIf="presentation._id" (click)="updatePresentation(presentation)">Update</button>
+    <button class="btn btn-danger" *ngIf="presentation._id" (click)="deletePresentation(presentation._id)">Delete</button>
+  </form>
+</div>

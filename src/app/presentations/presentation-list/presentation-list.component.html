@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-md-12">
+    <h2>Presentations</h2>
+    <ul class="list-group">
+      <li class="list-group-item"
+          *ngFor="let presentation of presentations">
+          <!--
+              dentro do li
+          (click)="selectContact(contact)"
+          [class.active]="contact === selectedContact"-->
+        {{presentation.title}}
+      </li>
+    </ul>
+    <button class="btn btn-warning" (click)="createNewPresentation()">New</button>
+  </div>
+  <div class="col-md-5 col-md-offset-2">
+    <presentation-details [presentation]="selectedContact">
+    </presentation-details>
+  </div>
+</div>
