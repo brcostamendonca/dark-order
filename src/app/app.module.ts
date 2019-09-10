@@ -29,13 +29,12 @@ import { PresentationComponent } from './presentations/presentation/presentation
     PresentationComponent
   ],
   imports: [
-    BrowserModule,
-    FormsModule,
-    HttpModule,
     HttpClientModule,
-
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     AppRoutingModule,
+    FormsModule,
+    HttpModule,
+
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'contacts', component: ContactListComponent },
