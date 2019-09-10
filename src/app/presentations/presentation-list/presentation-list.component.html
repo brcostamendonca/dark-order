@@ -3,11 +3,9 @@
     <h2>Presentations</h2>
     <ul class="list-group">
       <li class="list-group-item"
-          *ngFor="let presentation of presentations">
-          <!--
-              dentro do li
-          (click)="selectContact(contact)"
-          [class.active]="contact === selectedContact"-->
+          *ngFor="let presentation of presentations"
+          (click)="selectPresentation(presentation)"
+          [class.active]="presentation === selectedPresentation">
         {{presentation.title}}
       </li>
     </ul>
