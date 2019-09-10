@@ -185,7 +185,7 @@ app.put("/api/presentations/:id", function (req, res) {
 
 
 
-app.delete("/api/presentation/:id", function (req, res) {
+app.delete("/api/presentations/:id", function (req, res) {
   db.collection(PRESENTATIONS_COLLECTION).deleteOne({ _id: new ObjectID(req.params.id) }, function (err, result) {
     if (err) {
       handleError(res, err.message, "Failed to delete presentation");
