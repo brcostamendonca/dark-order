@@ -91,13 +91,13 @@ app.get("/api/contacts/:id", function (req, res) {
 
 app.put("/api/contacts/:id", function (req, res) {
   var updateDoc = req.body;
-  //delete updateDoc._id;
+  delete updateDoc._id;
 
-  db.collection(CONTACTS_COLLECTION).updateOne({ _id: new ObjectID(req.params.id) }, { $set: { name: "Canyon 123" } }, function (err, doc) {
+  db.collection(CONTACTS_COLLECTION).updateOne({ _id: new ObjectID(req.params.id) }, { $set: updateDoc }, function (err, doc) {
     if (err) {
       handleError(res, err, "Failed to update contact");
     } else {
-      //updateDoc._id = req.params.id;
+      updateDoc._id = req.params.id;
       res.status(200).json(updateDoc);
     }
   });
