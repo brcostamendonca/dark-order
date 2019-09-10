@@ -140,8 +140,8 @@ app.post("/api/presentations", function (req, res) {
   var newContact = req.body;
   newContact.createDate = new Date();
 
-  if (!req.body.name) {
-    handleError(res, "Invalid user input", "Must provide a name.", 400);
+  if (!req.body.title) {
+    handleError(res, "Invalid user input", "Must provide a title.", 400);
   } else {
     db.collection(PRESENTATIONS_COLLECTION).insertOne(newContact, function (err, doc) {
       if (err) {
