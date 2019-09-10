@@ -16,21 +16,21 @@ export class PresentationComponent implements OnInit {
 
   constructor(private presentaitonService: PresentationService) { }
 
-  createContact(presentation: Presentation) {
+  createPresentation(presentation: Presentation) {
     this.presentaitonService.createPresentation(presentation);
     //this.contactService.createContact(contact).then((newContact: Contact) => {
     //  this.createHandler(newContact);
     //});
   }
 
-  updateContact(presentation: Presentation): void {
+  updatePresentation(presentation: Presentation): void {
     this.presentaitonService.updatePresentation(presentation);
     //this.contactService.updateContact(contact).then((updatedContact: Contact) => {
     //  this.updateHandler(updatedContact);
     //});
   }
 
-  deleteContact(presentationId: String): void {
+  deletePresentation(presentationId: String): void {
     this.presentaitonService.deletePresentation(presentationId);
     //this.contactService.deleteContact(contactId).then((deletedContactId: String) => {
     //  this.deleteHandler(deletedContactId);
