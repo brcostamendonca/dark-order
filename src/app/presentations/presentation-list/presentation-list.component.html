@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-md-5">
-    <h2>Contacts</h2>
+    <h2>Presentations</h2>
     <ul class="list-group">
       <li class="list-group-item"
           *ngFor="let presentation of presentations"
@@ -12,7 +12,11 @@
     <button class="btn btn-warning" (click)="createNewPresentation()">New</button>
   </div>
   <div class="col-md-5 col-md-offset-2">
-    <presentation-details [presentation]="selectedPresentation">
+    <presentation-details
+                     [presentation]="selectedPresentation"
+                     [createHandler]="addPresentation"
+                     [updateHandler]="updatePresentation"
+                     [deleteHandler]="deletePresentation">
     </presentation-details>
   </div>
 </div>

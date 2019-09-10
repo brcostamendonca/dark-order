@@ -44,4 +44,28 @@ export class PresentationListComponent implements OnInit {
 
     this.selectPresentation(presentation);
   }
+
+  deletePresentation = (presentationId: String) => {
+    var idx = this.getIndexOfPresentation(presentationId);
+    if (idx !== -1) {
+      this.presentations.splice(idx, 1);
+      this.selectPresentation(null);
+    }
+    return this.presentations;
+  }
+
+  addPresentation = (presentation: Presentation) => {
+    this.presentations.push(presentation);
+    this.selectPresentation(presentation);
+    return this.presentations;
+  }
+
+  updatePresentation = (presentation: Presentation) => {
+    var idx = this.getIndexOfPresentation(presentation._id);
+    if (idx !== -1) {
+      this.presentations[idx] = presentation;
+      this.selectPresentation(presentation);
+    }
+    return this.presentations;
+  }
 }

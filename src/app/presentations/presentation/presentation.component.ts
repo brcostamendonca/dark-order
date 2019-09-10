@@ -11,6 +11,13 @@ export class PresentationComponent implements OnInit {
   @Input()
   presentation: Presentation;
 
+  @Input()
+  createHandler: Function;
+  @Input()
+  updateHandler: Function;
+  @Input()
+  deleteHandler: Function;
+
   ngOnInit() {
   }
 
@@ -18,23 +25,23 @@ export class PresentationComponent implements OnInit {
 
   createPresentation(presentation: Presentation) {
     this.presentaitonService.createPresentation(presentation);
-    //this.contactService.createContact(contact).then((newContact: Contact) => {
-    //  this.createHandler(newContact);
-    //});
+    this.presentaitonService.createPresentation(presentation).then((newPresentation: Presentation) => {
+      this.createHandler(newPresentation);
+    });
   }
 
   updatePresentation(presentation: Presentation): void {
     this.presentaitonService.updatePresentation(presentation);
-    //this.contactService.updateContact(contact).then((updatedContact: Contact) => {
-    //  this.updateHandler(updatedContact);
-    //});
+    this.presentaitonService.updatePresentation(presentation).then((updatedPresentation: Presentation) => {
+      this.updateHandler(updatedPresentation);
+    });
   }
 
   deletePresentation(presentationId: String): void {
     this.presentaitonService.deletePresentation(presentationId);
-    //this.contactService.deleteContact(contactId).then((deletedContactId: String) => {
-    //  this.deleteHandler(deletedContactId);
-    //});
+    this.presentaitonService.deletePresentation(presentationId).then((deletedPresentationId: String) => {
+      this.deleteHandler(deletedPresentationId);
+    });
 
   }
 
