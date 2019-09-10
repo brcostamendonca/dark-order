@@ -34,6 +34,7 @@ import { PresentationComponent } from './presentations/presentation/presentation
     HttpModule,
     HttpClientModule,
 
+    BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     AppRoutingModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
