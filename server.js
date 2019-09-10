@@ -126,7 +126,7 @@ function handleError(res, reason, message, code) {
  *    POST: creates a new presentation
  */
 
-app.get("/api/presentation", function (req, res) {
+app.get("/api/presentations", function (req, res) {
   db.collection(PRESENTATIONS_COLLECTION).find({}).toArray(function (err, docs) {
     if (err) {
       handleError(res, err.message, "Failed to get presentations.");
